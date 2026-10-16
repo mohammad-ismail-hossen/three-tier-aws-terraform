@@ -11,8 +11,15 @@ resource "aws_autoscaling_group" "asg" {
   target_group_arns = [aws_lb_target_group.tg.arn]
 
   launch_template {
-    name    = aws_launch_template.lt.name
-    version = "$Latest"
+    id    = aws_launch_template.lt.id
+    version = aws_launch_template.lt.latest_version
+  }
+
+  instance_refresh {
+    strategy = "Rolling"
+    preferences {
+      min_healthy_percentage = 66
+    }
   }
 
   tag {
