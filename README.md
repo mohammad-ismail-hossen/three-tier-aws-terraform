@@ -4,7 +4,7 @@ A three-tier AWS infrastructure provisioned with Terraform, featuring an Applica
 
 ## Architecture
 
-![Three-Tier AWS Architecture](architecture/architecture.svg)
+![Three-Tier AWS Architecture](architecture/architecture.drawio.svg)
 
 ## Overview
 
